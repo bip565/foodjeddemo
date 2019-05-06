@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3e4f25c0255a9b3e5ead"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "99f5007c8a357fec6a9a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -5300,9 +5300,9 @@ function ownKeys(object) {
 
 /***/ }),
 /* 88 */
-/*!***********************************!*\
-  !*** ./src/app/redux/reducers.ts ***!
-  \***********************************/
+/*!**************************************!*\
+  !*** ./src/common/redux/reducers.ts ***!
+  \**************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -5311,15 +5311,12 @@ function ownKeys(object) {
 
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var redux_1 = __webpack_require__(/*! redux */ 53);
-var react_router_redux_1 = __webpack_require__(/*! react-router-redux */ 64);
-var counter_1 = __webpack_require__(/*! ./modules/counter */ 153);
-var stars_1 = __webpack_require__(/*! ./modules/stars */ 154);
-
-var _require = __webpack_require__(/*! redux-connect */ 65),
-    reducer = _require.reducer;
-
-var rootReducer = redux_1.combineReducers({
+const redux_1 = __webpack_require__(/*! redux */ 53);
+const react_router_redux_1 = __webpack_require__(/*! react-router-redux */ 64);
+const counter_1 = __webpack_require__(/*! ./modules/counter */ 153);
+const stars_1 = __webpack_require__(/*! ./modules/stars */ 154);
+const { reducer } = __webpack_require__(/*! redux-connect */ 65);
+const rootReducer = redux_1.combineReducers({
     routing: react_router_redux_1.routerReducer,
     counter: counter_1.counterReducer,
     stars: stars_1.starsReducer,
@@ -5327,13 +5324,13 @@ var rootReducer = redux_1.combineReducers({
 });
 exports.default = rootReducer;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/redux/reducers.ts"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/redux/reducers.ts"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/redux/reducers.ts"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/redux/reducers.ts"); } } })();
 
 /***/ }),
 /* 89 */
-/*!**********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!./node_modules/postcss-loader!./src/app/components/Header/style.css ***!
-  \**********************************************************************************************************************************************************************/
+/*!**************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/common/components/Header/style.css ***!
+  \**************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -5343,18 +5340,16 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Nav___3mgLq {\n}\n.Nav___3mgLq ul {\n    list-style-type: none;\n    padding: 0\n}\n.Nav___3mgLq ul li {\n    display: inline;\n    padding: 5px\n}\n.Nav___3mgLq ul li a {\n    color: #212121\n}\n", ""]);
+exports.push([module.i, ".Nav {\n  & ul {\n    list-style-type: none;\n    padding: 0;\n\n    & li {\n      display: inline;\n      padding: 5px;\n\n      & a {\n        color: #212121;\n      }\n    }\n  }\n}\n", ""]);
 
 // exports
-exports.locals = {
-	"Nav": "Nav___3mgLq"
-};
+
 
 /***/ }),
 /* 90 */
-/*!*******************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!./node_modules/postcss-loader!./src/app/containers/App/style.css ***!
-  \*******************************************************************************************************************************************************************/
+/*!***********************************************************************!*\
+  !*** ./node_modules/css-loader!./src/common/containers/App/style.css ***!
+  \***********************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -5364,18 +5359,16 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".AppContainer___6v3Ob {\n  padding: 0;\n  margin: 0;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, ".AppContainer {\n  padding: 0;\n  margin: 0;\n  text-align: center;\n}\n", ""]);
 
 // exports
-exports.locals = {
-	"AppContainer": "AppContainer___6v3Ob"
-};
+
 
 /***/ }),
 /* 91 */
-/*!********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!./node_modules/postcss-loader!./src/app/containers/Home/style.css ***!
-  \********************************************************************************************************************************************************************/
+/*!************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/common/containers/Home/style.css ***!
+  \************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -5385,18 +5378,16 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Home___16pjX {\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, ".Home {\n  text-align: center;\n}\n", ""]);
 
 // exports
-exports.locals = {
-	"Home": "Home___16pjX"
-};
+
 
 /***/ }),
 /* 92 */
-/*!*********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!./node_modules/postcss-loader!./src/app/containers/About/style.css ***!
-  \*********************************************************************************************************************************************************************/
+/*!*************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/common/containers/About/style.css ***!
+  \*************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -5406,18 +5397,16 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".About___37m5h {}\n", ""]);
+exports.push([module.i, ".About {}\n", ""]);
 
 // exports
-exports.locals = {
-	"About": "About___37m5h"
-};
+
 
 /***/ }),
 /* 93 */
-/*!***********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!./node_modules/postcss-loader!./src/app/containers/Counter/style.css ***!
-  \***********************************************************************************************************************************************************************/
+/*!***************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/common/containers/Counter/style.css ***!
+  \***************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -5427,18 +5416,16 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Counter___2b51O {\n\n}\n", ""]);
+exports.push([module.i, ".Counter {\n\n}\n", ""]);
 
 // exports
-exports.locals = {
-	"Counter": "Counter___2b51O"
-};
+
 
 /***/ }),
 /* 94 */
-/*!*********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!./node_modules/postcss-loader!./src/app/containers/Stars/style.css ***!
-  \*********************************************************************************************************************************************************************/
+/*!*************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/common/containers/Stars/style.css ***!
+  \*************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -5448,12 +5435,10 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Stars___1CchM {}\n", ""]);
+exports.push([module.i, ".Stars {}\n", ""]);
 
 // exports
-exports.locals = {
-	"Stars": "Stars___1CchM"
-};
+
 
 /***/ }),
 /* 95 */
@@ -8824,9 +8809,9 @@ function camelCase(string) {
 
 /***/ }),
 /* 152 */
-/*!************************!*\
-  !*** ./config/main.js ***!
-  \************************/
+/*!*********************!*\
+  !*** ./env/main.js ***!
+  \*********************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -8842,8 +8827,8 @@ var config = {
   // This part goes to React-Helmet for Head of our HTML
   app: {
     head: {
-      title: 'barbar-vortigern',
-      titleTemplate: 'barbar-vortigern: %s',
+      title: 'Foodjed',
+      titleTemplate: 'Foodjed',
       meta: [
         { charset: 'utf-8' },
         { 'http-equiv': 'x-ua-compatible', content: 'ie=edge' },
@@ -8859,9 +8844,9 @@ module.exports = config;
 
 /***/ }),
 /* 153 */
-/*!************************************************!*\
-  !*** ./src/app/redux/modules/counter/index.ts ***!
-  \************************************************/
+/*!***************************************************!*\
+  !*** ./src/common/redux/modules/counter/index.ts ***!
+  \***************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -8874,14 +8859,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.INCREMENT = 'counter/INCREMENT';
 exports.DECREMENT = 'counter/DECREMENT';
 /** Counter: Initial State */
-var initialState = {
+const initialState = {
     count: 0
 };
 /** Reducer: CounterReducer */
-function counterReducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-    var action = arguments[1];
-
+function counterReducer(state = initialState, action) {
     switch (action.type) {
         case exports.INCREMENT:
             return {
@@ -8911,13 +8893,13 @@ function decrement() {
 }
 exports.decrement = decrement;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/redux/modules/counter/index.ts"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/redux/modules/counter/index.ts"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/redux/modules/counter/index.ts"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/redux/modules/counter/index.ts"); } } })();
 
 /***/ }),
 /* 154 */
-/*!**********************************************!*\
-  !*** ./src/app/redux/modules/stars/index.ts ***!
-  \**********************************************/
+/*!*************************************************!*\
+  !*** ./src/common/redux/modules/stars/index.ts ***!
+  \*************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -8931,14 +8913,11 @@ exports.GET_REQUEST = 'stars/GET_REQUEST';
 exports.GET_SUCCESS = 'stars/GET_SUCCESS';
 exports.GET_FAILURE = 'stars/GET_FAILURE';
 /** Initial State */
-var initialState = {
+const initialState = {
     isFetching: false
 };
 /** Reducer */
-function starsReducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-    var action = arguments[1];
-
+function starsReducer(state = initialState, action) {
     switch (action.type) {
         case exports.GET_REQUEST:
             return Object.assign({}, state, {
@@ -8962,21 +8941,15 @@ function starsReducer() {
 exports.starsReducer = starsReducer;
 /** Async Action Creator */
 function getStars() {
-    return function (dispatch) {
+    return dispatch => {
         dispatch(starsRequest());
-        return fetch('https://api.github.com/repos/barbar/vortigern').then(function (res) {
+        return fetch('https://api.github.com/repos/barbar/vortigern').then(res => {
             if (res.ok) {
-                return res.json().then(function (res) {
-                    return dispatch(starsSuccess(res.stargazers_count));
-                });
+                return res.json().then(res => dispatch(starsSuccess(res.stargazers_count)));
             } else {
-                return res.json().then(function (res) {
-                    return dispatch(starsFailure(res));
-                });
+                return res.json().then(res => dispatch(starsFailure(res)));
             }
-        }).catch(function (err) {
-            return dispatch(starsFailure(err));
-        });
+        }).catch(err => dispatch(starsFailure(err)));
     };
 }
 exports.getStars = getStars;
@@ -8992,7 +8965,7 @@ function starsSuccess(count) {
     return {
         type: exports.GET_SUCCESS,
         payload: {
-            count: count
+            count
         }
     };
 }
@@ -9002,13 +8975,13 @@ function starsFailure(message) {
     return {
         type: exports.GET_FAILURE,
         payload: {
-            message: message
+            message
         }
     };
 }
 exports.starsFailure = starsFailure;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/redux/modules/stars/index.ts"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/redux/modules/stars/index.ts"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/redux/modules/stars/index.ts"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/redux/modules/stars/index.ts"); } } })();
 
 /***/ }),
 /* 155 */
@@ -9606,15 +9579,15 @@ var HELMET_ATTRIBUTE = exports.HELMET_ATTRIBUTE = "data-react-helmet";
 
 /***/ }),
 /* 161 */
-/*!*********************************************************************************************!*\
-  !*** multi webpack-hot-middleware/client?reload=true ./src/client.tsx ./src/vendor/main.ts ***!
-  \*********************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** multi webpack-hot-middleware/client?reload=true ./src/client/client.tsx ./src/vendor/main.ts ***!
+  \****************************************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! webpack-hot-middleware/client?reload=true */162);
-__webpack_require__(/*! ./src/client.tsx */174);
+__webpack_require__(/*! ./src/client/client.tsx */174);
 module.exports = __webpack_require__(/*! ./src/vendor/main.ts */387);
 
 
@@ -10921,9 +10894,9 @@ module.exports = function(hash, moduleMap, options) {
 
 /***/ }),
 /* 174 */
-/*!************************!*\
-  !*** ./src/client.tsx ***!
-  \************************/
+/*!*******************************!*\
+  !*** ./src/client/client.tsx ***!
+  \*******************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -10932,33 +10905,24 @@ module.exports = function(hash, moduleMap, options) {
 
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var e6p = __webpack_require__(/*! es6-promise */ 175);
+const e6p = __webpack_require__(/*! es6-promise */ 175);
 e6p.polyfill();
 __webpack_require__(/*! isomorphic-fetch */ 97);
-var React = __webpack_require__(/*! react */ 0);
-var ReactDOM = __webpack_require__(/*! react-dom */ 180);
-var react_redux_1 = __webpack_require__(/*! react-redux */ 33);
-
-var _require = __webpack_require__(/*! react-router */ 55),
-    Router = _require.Router,
-    browserHistory = _require.browserHistory;
-
-var react_router_redux_1 = __webpack_require__(/*! react-router-redux */ 64);
-
-var _require2 = __webpack_require__(/*! redux-connect */ 65),
-    ReduxAsyncConnect = _require2.ReduxAsyncConnect;
-
-var store_1 = __webpack_require__(/*! ./app/redux/store */ 351);
+const React = __webpack_require__(/*! react */ 0);
+const ReactDOM = __webpack_require__(/*! react-dom */ 180);
+const react_redux_1 = __webpack_require__(/*! react-redux */ 33);
+const { Router, browserHistory } = __webpack_require__(/*! react-router */ 55);
+const react_router_redux_1 = __webpack_require__(/*! react-router-redux */ 64);
+const { ReduxAsyncConnect } = __webpack_require__(/*! redux-connect */ 65);
+const store_1 = __webpack_require__(/*! ../common/redux/store */ 351);
 __webpack_require__(/*! isomorphic-fetch */ 97);
-var routes_1 = __webpack_require__(/*! ./app/routes */ 354);
-var store = store_1.configureStore(browserHistory, window.__INITIAL_STATE__);
-var history = react_router_redux_1.syncHistoryWithStore(browserHistory, store);
-var connectedCmp = function connectedCmp(props) {
-    return React.createElement(ReduxAsyncConnect, Object.assign({}, props));
-};
+const routes_1 = __webpack_require__(/*! ../common/routes */ 354);
+const store = store_1.configureStore(browserHistory, window.__INITIAL_STATE__);
+const history = react_router_redux_1.syncHistoryWithStore(browserHistory, store);
+const connectedCmp = props => React.createElement(ReduxAsyncConnect, Object.assign({}, props));
 ReactDOM.hydrate(React.createElement(react_redux_1.Provider, { store: store, key: "provider" }, React.createElement(Router, { history: history, render: connectedCmp }, routes_1.default)), document.getElementById('app'));
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/client.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/client.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/client/client.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/client/client.tsx"); } } })();
 
 /***/ }),
 /* 175 */
@@ -42156,9 +42120,9 @@ function createRoutes(routes) {
 
 /***/ }),
 /* 351 */
-/*!********************************!*\
-  !*** ./src/app/redux/store.ts ***!
-  \********************************/
+/*!***********************************!*\
+  !*** ./src/common/redux/store.ts ***!
+  \***********************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42166,26 +42130,24 @@ function createRoutes(routes) {
 "use strict";
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var appConfig = __webpack_require__(/*! ../../../config/main */ 152);
-var redux_1 = __webpack_require__(/*! redux */ 53);
-var react_router_redux_1 = __webpack_require__(/*! react-router-redux */ 64);
-var redux_thunk_1 = __webpack_require__(/*! redux-thunk */ 352);
-var reducers_1 = __webpack_require__(/*! ./reducers */ 88);
-var redux_logger_1 = __webpack_require__(/*! redux-logger */ 353);
+const appConfig = __webpack_require__(/*! ../../../env/main */ 152);
+const redux_1 = __webpack_require__(/*! redux */ 53);
+const react_router_redux_1 = __webpack_require__(/*! react-router-redux */ 64);
+const redux_thunk_1 = __webpack_require__(/*! redux-thunk */ 352);
+const reducers_1 = __webpack_require__(/*! ./reducers */ 88);
+const redux_logger_1 = __webpack_require__(/*! redux-logger */ 353);
 function configureStore(history, initialState) {
-    var middlewares = [react_router_redux_1.routerMiddleware(history), redux_thunk_1.default];
+    const middlewares = [react_router_redux_1.routerMiddleware(history), redux_thunk_1.default];
     /** Add Only Dev. Middlewares */
     if (appConfig.env !== 'production' && true) {
-        var logger = redux_logger_1.createLogger();
+        const logger = redux_logger_1.createLogger();
         middlewares.push(logger);
     }
-    var composeEnhancers = appConfig.env !== 'production' && (typeof window === "undefined" ? "undefined" : _typeof(window)) === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux_1.compose;
-    var store = redux_1.createStore(reducers_1.default, initialState, composeEnhancers(redux_1.applyMiddleware.apply(redux_1, middlewares)));
+    const composeEnhancers = appConfig.env !== 'production' && typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux_1.compose;
+    const store = redux_1.createStore(reducers_1.default, initialState, composeEnhancers(redux_1.applyMiddleware(...middlewares)));
     if (appConfig.env === 'development' && module.hot) {
-        module.hot.accept(/*! ./reducers */ 88, function () {
+        module.hot.accept(/*! ./reducers */ 88, () => {
             store.replaceReducer(__webpack_require__(/*! ./reducers */ 88));
         });
     }
@@ -42193,7 +42155,7 @@ function configureStore(history, initialState) {
 }
 exports.configureStore = configureStore;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/redux/store.ts"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/redux/store.ts"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/redux/store.ts"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/redux/store.ts"); } } })();
 
 /***/ }),
 /* 352 */
@@ -42244,9 +42206,9 @@ exports['default'] = thunk;
 
 /***/ }),
 /* 354 */
-/*!**********************************!*\
-  !*** ./src/app/routes/index.tsx ***!
-  \**********************************/
+/*!*************************************!*\
+  !*** ./src/common/routes/index.tsx ***!
+  \*************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42255,18 +42217,18 @@ exports['default'] = thunk;
 
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ 0);
-var react_router_1 = __webpack_require__(/*! react-router */ 55);
-var containers_1 = __webpack_require__(/*! containers */ 355);
+const React = __webpack_require__(/*! react */ 0);
+const react_router_1 = __webpack_require__(/*! react-router */ 55);
+const containers_1 = __webpack_require__(/*! ../containers */ 355);
 exports.default = React.createElement(react_router_1.Route, { path: "/", component: containers_1.App }, React.createElement(react_router_1.IndexRoute, { component: containers_1.Home }), React.createElement(react_router_1.Route, { path: "about", component: containers_1.About }), React.createElement(react_router_1.Route, { path: "counter", component: containers_1.Counter }), React.createElement(react_router_1.Route, { path: "stars", component: containers_1.Stars }));
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/routes/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/routes/index.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/routes/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/routes/index.tsx"); } } })();
 
 /***/ }),
 /* 355 */
-/*!**************************************!*\
-  !*** ./src/app/containers/index.tsx ***!
-  \**************************************/
+/*!*****************************************!*\
+  !*** ./src/common/containers/index.tsx ***!
+  \*****************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42289,13 +42251,13 @@ exports.Counter = Counter_1.Counter;
 var Stars_1 = __webpack_require__(/*! ./Stars */ 385);
 exports.Stars = Stars_1.Stars;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/containers/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/containers/index.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/containers/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/containers/index.tsx"); } } })();
 
 /***/ }),
 /* 356 */
-/*!*******************************************!*\
-  !*** ./src/app/containers/Html/index.tsx ***!
-  \*******************************************/
+/*!**********************************************!*\
+  !*** ./src/common/containers/Html/index.tsx ***!
+  \**********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42303,70 +42265,34 @@ exports.Stars = Stars_1.Stars;
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ 0);
-var react_helmet_1 = __webpack_require__(/*! react-helmet */ 155);
-var serialize = __webpack_require__(/*! serialize-javascript */ 371);
-
-var Html = function (_React$Component) {
-    _inherits(Html, _React$Component);
-
-    function Html() {
-        _classCallCheck(this, Html);
-
-        return _possibleConstructorReturn(this, (Html.__proto__ || Object.getPrototypeOf(Html)).apply(this, arguments));
+const React = __webpack_require__(/*! react */ 0);
+const react_helmet_1 = __webpack_require__(/*! react-helmet */ 155);
+const serialize = __webpack_require__(/*! serialize-javascript */ 371);
+class Html extends React.Component {
+    resolve(files) {
+        return files.map(src => {
+            if (!this.props.manifest[src]) {
+                return;
+            }
+            return '/public/' + this.props.manifest[src];
+        }).filter(file => file !== undefined);
     }
-
-    _createClass(Html, [{
-        key: "resolve",
-        value: function resolve(files) {
-            var _this2 = this;
-
-            return files.map(function (src) {
-                if (!_this2.props.manifest[src]) {
-                    return;
-                }
-                return '/public/' + _this2.props.manifest[src];
-            }).filter(function (file) {
-                return file !== undefined;
-            });
-        }
-    }, {
-        key: "render",
-        value: function render() {
-            var head = react_helmet_1.Helmet.rewind();
-            var _props = this.props,
-                markup = _props.markup,
-                store = _props.store;
-
-            var styles = this.resolve(['vendor.css', 'app.css']);
-            var renderStyles = styles.map(function (src, i) {
-                return React.createElement("link", { key: i, rel: "stylesheet", type: "text/css", href: src });
-            });
-            var scripts = this.resolve(['vendor.js', 'app.js']);
-            var renderScripts = scripts.map(function (src, i) {
-                return React.createElement("script", { src: src, key: i });
-            });
-            // tslint:disable-next-line:max-line-length
-            var initialState = React.createElement("script", { dangerouslySetInnerHTML: { __html: "window.__INITIAL_STATE__=" + serialize(store.getState(), { isJSON: true }) + ";" }, charSet: "UTF-8" });
-            return React.createElement("html", null, React.createElement("head", null, head.base.toComponent(), head.title.toComponent(), head.meta.toComponent(), head.link.toComponent(), head.script.toComponent(), renderStyles, React.createElement("link", { rel: "shortcut icon", href: "/favicon.ico" })), React.createElement("body", null, React.createElement("main", { id: "app", dangerouslySetInnerHTML: { __html: markup } }), initialState, renderScripts));
-        }
-    }]);
-
-    return Html;
-}(React.Component);
-
+    render() {
+        const head = react_helmet_1.Helmet.rewind();
+        const { markup, store } = this.props;
+        const styles = this.resolve(['vendor.css', 'app.css']);
+        const renderStyles = styles.map((src, i) => React.createElement("link", { key: i, rel: "stylesheet", type: "text/css", href: src }));
+        const scripts = this.resolve(['vendor.js', 'app.js']);
+        const renderScripts = scripts.map((src, i) => React.createElement("script", { src: src, key: i }));
+        // tslint:disable-next-line:max-line-length
+        const initialState = React.createElement("script", { dangerouslySetInnerHTML: { __html: `window.__INITIAL_STATE__=${serialize(store.getState(), { isJSON: true })};` }, charSet: "UTF-8" });
+        return React.createElement("html", null, React.createElement("head", null, head.base.toComponent(), head.title.toComponent(), head.meta.toComponent(), head.link.toComponent(), head.script.toComponent(), renderStyles, React.createElement("link", { rel: "shortcut icon", href: "/favicon.ico" })), React.createElement("body", null, React.createElement("main", { id: "app", dangerouslySetInnerHTML: { __html: markup } }), initialState, renderScripts));
+    }
+}
 exports.Html = Html;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/containers/Html/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/containers/Html/index.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/containers/Html/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/containers/Html/index.tsx"); } } })();
 
 /***/ }),
 /* 357 */
@@ -44878,9 +44804,9 @@ module.exports = function serialize(obj, options) {
 
 /***/ }),
 /* 372 */
-/*!******************************************!*\
-  !*** ./src/app/containers/App/index.tsx ***!
-  \******************************************/
+/*!*********************************************!*\
+  !*** ./src/common/containers/App/index.tsx ***!
+  \*********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -44888,49 +44814,26 @@ module.exports = function serialize(obj, options) {
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var appConfig = __webpack_require__(/*! ../../../../config/main */ 152);
-var React = __webpack_require__(/*! react */ 0);
-var react_helmet_1 = __webpack_require__(/*! react-helmet */ 155);
-var components_1 = __webpack_require__(/*! components */ 373);
-var style = __webpack_require__(/*! ./style.css */ 377);
-
-var App = function (_React$Component) {
-    _inherits(App, _React$Component);
-
-    function App() {
-        _classCallCheck(this, App);
-
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+const appConfig = __webpack_require__(/*! ../../../../env/main */ 152);
+const React = __webpack_require__(/*! react */ 0);
+const react_helmet_1 = __webpack_require__(/*! react-helmet */ 155);
+const components_1 = __webpack_require__(/*! ./../../components */ 373);
+const style = __webpack_require__(/*! ./style.css */ 377);
+class App extends React.Component {
+    render() {
+        return React.createElement("section", { className: style.AppContainer }, React.createElement(react_helmet_1.Helmet, Object.assign({}, appConfig.app, appConfig.app.head)), React.createElement(components_1.Header, null), this.props.children);
     }
-
-    _createClass(App, [{
-        key: "render",
-        value: function render() {
-            return React.createElement("section", { className: style.AppContainer }, React.createElement(react_helmet_1.Helmet, Object.assign({}, appConfig.app, appConfig.app.head)), React.createElement(components_1.Header, null), this.props.children);
-        }
-    }]);
-
-    return App;
-}(React.Component);
-
+}
 exports.App = App;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/containers/App/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/containers/App/index.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/containers/App/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/containers/App/index.tsx"); } } })();
 
 /***/ }),
 /* 373 */
-/*!**************************************!*\
-  !*** ./src/app/components/index.tsx ***!
-  \**************************************/
+/*!*****************************************!*\
+  !*** ./src/common/components/index.tsx ***!
+  \*****************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -44942,13 +44845,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Header_1 = __webpack_require__(/*! ./Header */ 374);
 exports.Header = Header_1.Header;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/components/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/components/index.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/components/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/components/index.tsx"); } } })();
 
 /***/ }),
 /* 374 */
-/*!*********************************************!*\
-  !*** ./src/app/components/Header/index.tsx ***!
-  \*********************************************/
+/*!************************************************!*\
+  !*** ./src/common/components/Header/index.tsx ***!
+  \************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -44957,20 +44860,18 @@ exports.Header = Header_1.Header;
 
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ 0);
-var react_router_1 = __webpack_require__(/*! react-router */ 55);
-var style = __webpack_require__(/*! ./style.css */ 375);
-exports.Header = function () {
-    return React.createElement("nav", { className: style.Nav }, React.createElement("ul", null, React.createElement("li", null, React.createElement(react_router_1.Link, { to: "/" }, "Home")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "about" }, "About")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "counter" }, "Counter")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "stars" }, "Stars"))));
-};
+const React = __webpack_require__(/*! react */ 0);
+const react_router_1 = __webpack_require__(/*! react-router */ 55);
+const style = __webpack_require__(/*! ./style.css */ 375);
+exports.Header = () => React.createElement("nav", { className: style.Nav }, React.createElement("ul", null, React.createElement("li", null, React.createElement(react_router_1.Link, { to: "/" }, "Home")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "about" }, "About")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "counter" }, "Counter")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "stars" }, "Stars"))));
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/components/Header/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/components/Header/index.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/components/Header/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/components/Header/index.tsx"); } } })();
 
 /***/ }),
 /* 375 */
-/*!*********************************************!*\
-  !*** ./src/app/components/Header/style.css ***!
-  \*********************************************/
+/*!************************************************!*\
+  !*** ./src/common/components/Header/style.css ***!
+  \************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -44978,7 +44879,7 @@ exports.Header = function () {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 89);
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 89);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -44992,8 +44893,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 89, function() {
-			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 89);
+		module.hot.accept(/*! !../../../../node_modules/css-loader!./style.css */ 89, function() {
+			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 89);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -45104,9 +45005,9 @@ module.exports = function (css) {
 
 /***/ }),
 /* 377 */
-/*!******************************************!*\
-  !*** ./src/app/containers/App/style.css ***!
-  \******************************************/
+/*!*********************************************!*\
+  !*** ./src/common/containers/App/style.css ***!
+  \*********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45114,7 +45015,7 @@ module.exports = function (css) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 90);
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 90);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -45128,8 +45029,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 90, function() {
-			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 90);
+		module.hot.accept(/*! !../../../../node_modules/css-loader!./style.css */ 90, function() {
+			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 90);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -45140,9 +45041,9 @@ if(true) {
 
 /***/ }),
 /* 378 */
-/*!*******************************************!*\
-  !*** ./src/app/containers/Home/index.tsx ***!
-  \*******************************************/
+/*!**********************************************!*\
+  !*** ./src/common/containers/Home/index.tsx ***!
+  \**********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45150,46 +45051,23 @@ if(true) {
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ 0);
-var style = __webpack_require__(/*! ./style.css */ 379);
-
-var Home = function (_React$Component) {
-    _inherits(Home, _React$Component);
-
-    function Home() {
-        _classCallCheck(this, Home);
-
-        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+const React = __webpack_require__(/*! react */ 0);
+const style = __webpack_require__(/*! ./style.css */ 379);
+class Home extends React.Component {
+    render() {
+        return React.createElement("div", { className: style.Home }, React.createElement("img", { src: __webpack_require__(/*! ./barbar.png */ 380) }), React.createElement("p", null, "Hello!"));
     }
-
-    _createClass(Home, [{
-        key: "render",
-        value: function render() {
-            return React.createElement("div", { className: style.Home }, React.createElement("img", { src: __webpack_require__(/*! ./barbar.png */ 380) }), React.createElement("p", null, "Hello!"));
-        }
-    }]);
-
-    return Home;
-}(React.Component);
-
+}
 exports.Home = Home;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/containers/Home/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/containers/Home/index.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/containers/Home/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/containers/Home/index.tsx"); } } })();
 
 /***/ }),
 /* 379 */
-/*!*******************************************!*\
-  !*** ./src/app/containers/Home/style.css ***!
-  \*******************************************/
+/*!**********************************************!*\
+  !*** ./src/common/containers/Home/style.css ***!
+  \**********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45197,7 +45075,7 @@ exports.Home = Home;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 91);
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 91);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -45211,8 +45089,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 91, function() {
-			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 91);
+		module.hot.accept(/*! !../../../../node_modules/css-loader!./style.css */ 91, function() {
+			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 91);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -45223,9 +45101,9 @@ if(true) {
 
 /***/ }),
 /* 380 */
-/*!********************************************!*\
-  !*** ./src/app/containers/Home/barbar.png ***!
-  \********************************************/
+/*!***********************************************!*\
+  !*** ./src/common/containers/Home/barbar.png ***!
+  \***********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45234,9 +45112,9 @@ module.exports = __webpack_require__.p + "images/6bb4ab550c97742ecb88e2d2e6d5952
 
 /***/ }),
 /* 381 */
-/*!********************************************!*\
-  !*** ./src/app/containers/About/index.tsx ***!
-  \********************************************/
+/*!***********************************************!*\
+  !*** ./src/common/containers/About/index.tsx ***!
+  \***********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45244,46 +45122,23 @@ module.exports = __webpack_require__.p + "images/6bb4ab550c97742ecb88e2d2e6d5952
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ 0);
-var style = __webpack_require__(/*! ./style.css */ 382);
-
-var About = function (_React$Component) {
-    _inherits(About, _React$Component);
-
-    function About() {
-        _classCallCheck(this, About);
-
-        return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+const React = __webpack_require__(/*! react */ 0);
+const style = __webpack_require__(/*! ./style.css */ 382);
+class About extends React.Component {
+    render() {
+        return React.createElement("div", { className: style.About }, React.createElement("h4", null, "About"));
     }
-
-    _createClass(About, [{
-        key: "render",
-        value: function render() {
-            return React.createElement("div", { className: style.About }, React.createElement("h4", null, "About"));
-        }
-    }]);
-
-    return About;
-}(React.Component);
-
+}
 exports.About = About;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/containers/About/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/containers/About/index.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/containers/About/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/containers/About/index.tsx"); } } })();
 
 /***/ }),
 /* 382 */
-/*!********************************************!*\
-  !*** ./src/app/containers/About/style.css ***!
-  \********************************************/
+/*!***********************************************!*\
+  !*** ./src/common/containers/About/style.css ***!
+  \***********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45291,7 +45146,7 @@ exports.About = About;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 92);
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 92);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -45305,8 +45160,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 92, function() {
-			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 92);
+		module.hot.accept(/*! !../../../../node_modules/css-loader!./style.css */ 92, function() {
+			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 92);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -45317,9 +45172,9 @@ if(true) {
 
 /***/ }),
 /* 383 */
-/*!**********************************************!*\
-  !*** ./src/app/containers/Counter/index.tsx ***!
-  \**********************************************/
+/*!*************************************************!*\
+  !*** ./src/common/containers/Counter/index.tsx ***!
+  \*************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45327,76 +45182,37 @@ if(true) {
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
     var c = arguments.length,
         r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
         d;
-    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ 0);
-var _1 = __webpack_require__(/*! modules/counter/ */ 153);
-
-var _require = __webpack_require__(/*! react-redux */ 33),
-    connect = _require.connect;
-
-var style = __webpack_require__(/*! ./style.css */ 384);
-var Counter = function (_React$Component) {
-    _inherits(Counter, _React$Component);
-
-    function Counter() {
-        _classCallCheck(this, Counter);
-
-        return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
+const React = __webpack_require__(/*! react */ 0);
+const counter_1 = __webpack_require__(/*! ../../redux/modules/counter */ 153);
+const { connect } = __webpack_require__(/*! react-redux */ 33);
+const style = __webpack_require__(/*! ./style.css */ 384);
+let Counter = class Counter extends React.Component {
+    render() {
+        const { increment, decrement, counter } = this.props;
+        return React.createElement("div", { className: style.Counter }, React.createElement("h4", null, "Counter Example"), React.createElement("button", { name: "incBtn", onClick: increment }, "INCREMENT"), React.createElement("button", { name: "decBtn", onClick: decrement, disabled: counter.count <= 0 }, "DECREMENT"), React.createElement("p", null, counter.count));
     }
-
-    _createClass(Counter, [{
-        key: "render",
-        value: function render() {
-            var _props = this.props,
-                increment = _props.increment,
-                decrement = _props.decrement,
-                counter = _props.counter;
-
-            return React.createElement("div", { className: style.Counter }, React.createElement("h4", null, "Counter Example"), React.createElement("button", { name: "incBtn", onClick: increment }, "INCREMENT"), React.createElement("button", { name: "decBtn", onClick: decrement, disabled: counter.count <= 0 }, "DECREMENT"), React.createElement("p", null, counter.count));
-        }
-    }]);
-
-    return Counter;
-}(React.Component);
-Counter = __decorate([connect(function (state) {
-    return { counter: state.counter };
-}, function (dispatch) {
-    return {
-        decrement: function decrement() {
-            return dispatch(_1.decrement());
-        },
-        increment: function increment() {
-            return dispatch(_1.increment());
-        }
-    };
-})], Counter);
+};
+Counter = __decorate([connect(state => ({ counter: state.counter }), dispatch => ({
+    decrement: () => dispatch(counter_1.decrement()),
+    increment: () => dispatch(counter_1.increment())
+}))], Counter);
 exports.Counter = Counter;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/containers/Counter/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/containers/Counter/index.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/containers/Counter/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/containers/Counter/index.tsx"); } } })();
 
 /***/ }),
 /* 384 */
-/*!**********************************************!*\
-  !*** ./src/app/containers/Counter/style.css ***!
-  \**********************************************/
+/*!*************************************************!*\
+  !*** ./src/common/containers/Counter/style.css ***!
+  \*************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45404,7 +45220,7 @@ exports.Counter = Counter;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 93);
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 93);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -45418,8 +45234,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 93, function() {
-			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 93);
+		module.hot.accept(/*! !../../../../node_modules/css-loader!./style.css */ 93, function() {
+			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 93);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -45430,9 +45246,9 @@ if(true) {
 
 /***/ }),
 /* 385 */
-/*!********************************************!*\
-  !*** ./src/app/containers/Stars/index.tsx ***!
-  \********************************************/
+/*!***********************************************!*\
+  !*** ./src/common/containers/Stars/index.tsx ***!
+  \***********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45440,73 +45256,39 @@ if(true) {
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
     var c = arguments.length,
         r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
         d;
-    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ 0);
-var stars_1 = __webpack_require__(/*! modules/stars */ 154);
-
-var _require = __webpack_require__(/*! react-redux */ 33),
-    connect = _require.connect;
-
-var _require2 = __webpack_require__(/*! redux-connect */ 65),
-    asyncConnect = _require2.asyncConnect;
-
-var style = __webpack_require__(/*! ./style.css */ 386);
-var Stars = function (_React$Component) {
-    _inherits(Stars, _React$Component);
-
-    function Stars() {
-        _classCallCheck(this, Stars);
-
-        return _possibleConstructorReturn(this, (Stars.__proto__ || Object.getPrototypeOf(Stars)).apply(this, arguments));
+const React = __webpack_require__(/*! react */ 0);
+const stars_1 = __webpack_require__(/*! ../../redux/modules/stars */ 154);
+const { connect } = __webpack_require__(/*! react-redux */ 33);
+const { asyncConnect } = __webpack_require__(/*! redux-connect */ 65);
+const style = __webpack_require__(/*! ./style.css */ 386);
+let Stars = class Stars extends React.Component {
+    render() {
+        const { stars } = this.props;
+        return React.createElement("div", { className: style.Stars }, stars.isFetching ? 'Fetching Stars' : stars.count);
     }
-
-    _createClass(Stars, [{
-        key: "render",
-        value: function render() {
-            var stars = this.props.stars;
-
-            return React.createElement("div", { className: style.Stars }, stars.isFetching ? 'Fetching Stars' : stars.count);
-        }
-    }]);
-
-    return Stars;
-}(React.Component);
+};
 Stars = __decorate([asyncConnect([{
-    promise: function promise(_ref) {
-        var dispatch = _ref.store.dispatch;
-
+    promise: ({ store: { dispatch } }) => {
         return dispatch(stars_1.getStars());
     }
-}]), connect(function (state) {
-    return { stars: state.stars };
-})], Stars);
+}]), connect(state => ({ stars: state.stars }))], Stars);
 exports.Stars = Stars;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/app/containers/Stars/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/app/containers/Stars/index.tsx"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/common/containers/Stars/index.tsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/common/containers/Stars/index.tsx"); } } })();
 
 /***/ }),
 /* 386 */
-/*!********************************************!*\
-  !*** ./src/app/containers/Stars/style.css ***!
-  \********************************************/
+/*!***********************************************!*\
+  !*** ./src/common/containers/Stars/style.css ***!
+  \***********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45514,7 +45296,7 @@ exports.Stars = Stars;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 94);
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 94);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -45528,8 +45310,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 94, function() {
-			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!../../../../node_modules/postcss-loader!./style.css */ 94);
+		module.hot.accept(/*! !../../../../node_modules/css-loader!./style.css */ 94, function() {
+			var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ 94);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -45547,7 +45329,6 @@ if(true) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
 /**
  * This is an entry point for additional assets, require your assets under this file.
  * Example:
@@ -45555,8 +45336,7 @@ if(true) {
  * If you try using bootstrap 4, see: https://github.com/shakacode/bootstrap-loader/issues/244
  */
 
-
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/projects/src/vendor/main.ts"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/projects/src/vendor/main.ts"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/home/appsbee/Desktop/newreact/src/vendor/main.ts"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/home/appsbee/Desktop/newreact/src/vendor/main.ts"); } } })();
 
 /***/ })
 /******/ ]);

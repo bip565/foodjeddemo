@@ -376,8 +376,8 @@ var config = {
   // This part goes to React-Helmet for Head of our HTML
   app: {
     head: {
-      title: 'barbar-vortigern',
-      titleTemplate: 'barbar-vortigern: %s',
+      title: 'Foodjed',
+      titleTemplate: 'Foodjed',
       meta: [
         { charset: 'utf-8' },
         { 'http-equiv': 'x-ua-compatible', content: 'ie=edge' },
@@ -779,15 +779,12 @@ module.exports = require("redux");
 
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var redux_1 = __webpack_require__(30);
-var react_router_redux_1 = __webpack_require__(15);
-var counter_1 = __webpack_require__(32);
-var stars_1 = __webpack_require__(33);
-
-var _require = __webpack_require__(16),
-    reducer = _require.reducer;
-
-var rootReducer = redux_1.combineReducers({
+const redux_1 = __webpack_require__(30);
+const react_router_redux_1 = __webpack_require__(15);
+const counter_1 = __webpack_require__(32);
+const stars_1 = __webpack_require__(33);
+const { reducer } = __webpack_require__(16);
+const rootReducer = redux_1.combineReducers({
     routing: react_router_redux_1.routerReducer,
     counter: counter_1.counterReducer,
     stars: stars_1.starsReducer,
@@ -807,14 +804,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.INCREMENT = 'counter/INCREMENT';
 exports.DECREMENT = 'counter/DECREMENT';
 /** Counter: Initial State */
-var initialState = {
+const initialState = {
     count: 0
 };
 /** Reducer: CounterReducer */
-function counterReducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-    var action = arguments[1];
-
+function counterReducer(state = initialState, action) {
     switch (action.type) {
         case exports.INCREMENT:
             return {
@@ -857,14 +851,11 @@ exports.GET_REQUEST = 'stars/GET_REQUEST';
 exports.GET_SUCCESS = 'stars/GET_SUCCESS';
 exports.GET_FAILURE = 'stars/GET_FAILURE';
 /** Initial State */
-var initialState = {
+const initialState = {
     isFetching: false
 };
 /** Reducer */
-function starsReducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-    var action = arguments[1];
-
+function starsReducer(state = initialState, action) {
     switch (action.type) {
         case exports.GET_REQUEST:
             return Object.assign({}, state, {
@@ -888,21 +879,15 @@ function starsReducer() {
 exports.starsReducer = starsReducer;
 /** Async Action Creator */
 function getStars() {
-    return function (dispatch) {
+    return dispatch => {
         dispatch(starsRequest());
-        return fetch('https://api.github.com/repos/barbar/vortigern').then(function (res) {
+        return fetch('https://api.github.com/repos/barbar/vortigern').then(res => {
             if (res.ok) {
-                return res.json().then(function (res) {
-                    return dispatch(starsSuccess(res.stargazers_count));
-                });
+                return res.json().then(res => dispatch(starsSuccess(res.stargazers_count)));
             } else {
-                return res.json().then(function (res) {
-                    return dispatch(starsFailure(res));
-                });
+                return res.json().then(res => dispatch(starsFailure(res)));
             }
-        }).catch(function (err) {
-            return dispatch(starsFailure(err));
-        });
+        }).catch(err => dispatch(starsFailure(err)));
     };
 }
 exports.getStars = getStars;
@@ -918,7 +903,7 @@ function starsSuccess(count) {
     return {
         type: exports.GET_SUCCESS,
         payload: {
-            count: count
+            count
         }
     };
 }
@@ -928,7 +913,7 @@ function starsFailure(message) {
     return {
         type: exports.GET_FAILURE,
         payload: {
-            message: message
+            message
         }
     };
 }
@@ -1216,35 +1201,31 @@ module.exports = require("webpack");
 
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var appConfig = __webpack_require__(11);
-var e6p = __webpack_require__(51);
+const appConfig = __webpack_require__(11);
+const e6p = __webpack_require__(51);
 e6p.polyfill();
 __webpack_require__(52);
-var React = __webpack_require__(0);
-var ReactDOMServer = __webpack_require__(53);
-var react_redux_1 = __webpack_require__(13);
-var react_router_1 = __webpack_require__(14);
-var react_router_redux_1 = __webpack_require__(15);
-
-var _require = __webpack_require__(16),
-    ReduxAsyncConnect = _require.ReduxAsyncConnect,
-    loadOnServer = _require.loadOnServer;
-
-var store_1 = __webpack_require__(62);
-var routes_1 = __webpack_require__(66);
-var containers_1 = __webpack_require__(34);
-var manifest = __webpack_require__(122);
-var express = __webpack_require__(123);
-var path = __webpack_require__(48);
-var compression = __webpack_require__(124);
-var Chalk = __webpack_require__(125);
-var favicon = __webpack_require__(126);
-var app = express();
+const React = __webpack_require__(0);
+const ReactDOMServer = __webpack_require__(53);
+const react_redux_1 = __webpack_require__(13);
+const react_router_1 = __webpack_require__(14);
+const react_router_redux_1 = __webpack_require__(15);
+const { ReduxAsyncConnect, loadOnServer } = __webpack_require__(16);
+const store_1 = __webpack_require__(62);
+const routes_1 = __webpack_require__(66);
+const containers_1 = __webpack_require__(34);
+const manifest = __webpack_require__(122);
+const express = __webpack_require__(123);
+const path = __webpack_require__(48);
+const compression = __webpack_require__(124);
+const Chalk = __webpack_require__(125);
+const favicon = __webpack_require__(126);
+const app = express();
 app.use(compression());
 if (process.env.NODE_ENV !== 'production') {
-    var webpack = __webpack_require__(49);
-    var webpackConfig = __webpack_require__(127);
-    var webpackCompiler = webpack(webpackConfig);
+    const webpack = __webpack_require__(49);
+    const webpackConfig = __webpack_require__(127);
+    const webpackCompiler = webpack(webpackConfig);
     app.use(__webpack_require__(134)(webpackCompiler, {
         publicPath: webpackConfig.output.publicPath,
         stats: { colors: true },
@@ -1259,20 +1240,20 @@ if (process.env.NODE_ENV !== 'production') {
 }
 app.use(favicon(path.join(__dirname, 'public/favicon.ico')));
 app.use('/public', express.static(path.join(__dirname, 'public')));
-app.get('*', function (req, res) {
-    var location = req.url;
-    var memoryHistory = react_router_1.createMemoryHistory(req.originalUrl);
-    var store = store_1.configureStore(memoryHistory);
-    var history = react_router_redux_1.syncHistoryWithStore(memoryHistory, store);
-    react_router_1.match({ history: history, routes: routes_1.default, location: location }, function (error, redirectLocation, renderProps) {
+app.get('*', (req, res) => {
+    const location = req.url;
+    const memoryHistory = react_router_1.createMemoryHistory(req.originalUrl);
+    const store = store_1.configureStore(memoryHistory);
+    const history = react_router_redux_1.syncHistoryWithStore(memoryHistory, store);
+    react_router_1.match({ history, routes: routes_1.default, location }, (error, redirectLocation, renderProps) => {
         if (error) {
             res.status(500).send(error.message);
         } else if (redirectLocation) {
             res.redirect(302, redirectLocation.pathname + redirectLocation.search);
         } else if (renderProps) {
-            var asyncRenderData = Object.assign({}, renderProps, { store: store });
-            loadOnServer(asyncRenderData).then(function () {
-                var markup = ReactDOMServer.renderToString(React.createElement(react_redux_1.Provider, { store: store, key: "provider" }, React.createElement(ReduxAsyncConnect, Object.assign({}, renderProps))));
+            const asyncRenderData = Object.assign({}, renderProps, { store });
+            loadOnServer(asyncRenderData).then(() => {
+                const markup = ReactDOMServer.renderToString(React.createElement(react_redux_1.Provider, { store: store, key: "provider" }, React.createElement(ReduxAsyncConnect, Object.assign({}, renderProps))));
                 res.status(200).send(renderHTML(markup, store));
             });
         } else {
@@ -1280,16 +1261,16 @@ app.get('*', function (req, res) {
         }
     });
 });
-app.listen(appConfig.port, appConfig.host, function (err) {
+app.listen(appConfig.port, appConfig.host, err => {
     if (err) {
         console.error(Chalk.bgRed(err));
     } else {
-        console.info(Chalk.black.bgGreen("\n\n\uD83D\uDC82  Listening at http://" + appConfig.host + ":" + appConfig.port + "\n"));
+        console.info(Chalk.black.bgGreen(`\n\n💂  Listening at http://${appConfig.host}:${appConfig.port}\n`));
     }
 });
 function renderHTML(markup, store) {
-    var html = ReactDOMServer.renderToString(React.createElement(containers_1.Html, { markup: markup, manifest: manifest, store: store }));
-    return "<!doctype html> " + html;
+    const html = ReactDOMServer.renderToString(React.createElement(containers_1.Html, { markup: markup, manifest: manifest, store: store }));
+    return `<!doctype html> ${html}`;
 }
 
 /***/ }),
@@ -4841,26 +4822,24 @@ module.exports = camelize;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var appConfig = __webpack_require__(11);
-var redux_1 = __webpack_require__(30);
-var react_router_redux_1 = __webpack_require__(15);
-var redux_thunk_1 = __webpack_require__(64);
-var reducers_1 = __webpack_require__(31);
-var redux_logger_1 = __webpack_require__(65);
+const appConfig = __webpack_require__(11);
+const redux_1 = __webpack_require__(30);
+const react_router_redux_1 = __webpack_require__(15);
+const redux_thunk_1 = __webpack_require__(64);
+const reducers_1 = __webpack_require__(31);
+const redux_logger_1 = __webpack_require__(65);
 function configureStore(history, initialState) {
-    var middlewares = [react_router_redux_1.routerMiddleware(history), redux_thunk_1.default];
+    const middlewares = [react_router_redux_1.routerMiddleware(history), redux_thunk_1.default];
     /** Add Only Dev. Middlewares */
     if (appConfig.env !== 'production' && process.env.BROWSER) {
-        var logger = redux_logger_1.createLogger();
+        const logger = redux_logger_1.createLogger();
         middlewares.push(logger);
     }
-    var composeEnhancers = appConfig.env !== 'production' && (typeof window === "undefined" ? "undefined" : _typeof(window)) === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux_1.compose;
-    var store = redux_1.createStore(reducers_1.default, initialState, composeEnhancers(redux_1.applyMiddleware.apply(redux_1, middlewares)));
+    const composeEnhancers = appConfig.env !== 'production' && typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux_1.compose;
+    const store = redux_1.createStore(reducers_1.default, initialState, composeEnhancers(redux_1.applyMiddleware(...middlewares)));
     if (appConfig.env === 'development' && module.hot) {
-        module.hot.accept('./reducers', function () {
+        module.hot.accept('./reducers', () => {
             store.replaceReducer(__webpack_require__(31));
         });
     }
@@ -4917,9 +4896,9 @@ module.exports = require("redux-logger");
 
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(0);
-var react_router_1 = __webpack_require__(14);
-var containers_1 = __webpack_require__(34);
+const React = __webpack_require__(0);
+const react_router_1 = __webpack_require__(14);
+const containers_1 = __webpack_require__(34);
 exports.default = React.createElement(react_router_1.Route, { path: "/", component: containers_1.App }, React.createElement(react_router_1.IndexRoute, { component: containers_1.Home }), React.createElement(react_router_1.Route, { path: "about", component: containers_1.About }), React.createElement(react_router_1.Route, { path: "counter", component: containers_1.Counter }), React.createElement(react_router_1.Route, { path: "stars", component: containers_1.Stars }));
 
 /***/ }),
@@ -4929,67 +4908,31 @@ exports.default = React.createElement(react_router_1.Route, { path: "/", compone
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(0);
-var react_helmet_1 = __webpack_require__(35);
-var serialize = __webpack_require__(68);
-
-var Html = function (_React$Component) {
-    _inherits(Html, _React$Component);
-
-    function Html() {
-        _classCallCheck(this, Html);
-
-        return _possibleConstructorReturn(this, (Html.__proto__ || Object.getPrototypeOf(Html)).apply(this, arguments));
+const React = __webpack_require__(0);
+const react_helmet_1 = __webpack_require__(35);
+const serialize = __webpack_require__(68);
+class Html extends React.Component {
+    resolve(files) {
+        return files.map(src => {
+            if (!this.props.manifest[src]) {
+                return;
+            }
+            return '/public/' + this.props.manifest[src];
+        }).filter(file => file !== undefined);
     }
-
-    _createClass(Html, [{
-        key: "resolve",
-        value: function resolve(files) {
-            var _this2 = this;
-
-            return files.map(function (src) {
-                if (!_this2.props.manifest[src]) {
-                    return;
-                }
-                return '/public/' + _this2.props.manifest[src];
-            }).filter(function (file) {
-                return file !== undefined;
-            });
-        }
-    }, {
-        key: "render",
-        value: function render() {
-            var head = react_helmet_1.Helmet.rewind();
-            var _props = this.props,
-                markup = _props.markup,
-                store = _props.store;
-
-            var styles = this.resolve(['vendor.css', 'app.css']);
-            var renderStyles = styles.map(function (src, i) {
-                return React.createElement("link", { key: i, rel: "stylesheet", type: "text/css", href: src });
-            });
-            var scripts = this.resolve(['vendor.js', 'app.js']);
-            var renderScripts = scripts.map(function (src, i) {
-                return React.createElement("script", { src: src, key: i });
-            });
-            // tslint:disable-next-line:max-line-length
-            var initialState = React.createElement("script", { dangerouslySetInnerHTML: { __html: "window.__INITIAL_STATE__=" + serialize(store.getState(), { isJSON: true }) + ";" }, charSet: "UTF-8" });
-            return React.createElement("html", null, React.createElement("head", null, head.base.toComponent(), head.title.toComponent(), head.meta.toComponent(), head.link.toComponent(), head.script.toComponent(), renderStyles, React.createElement("link", { rel: "shortcut icon", href: "/favicon.ico" })), React.createElement("body", null, React.createElement("main", { id: "app", dangerouslySetInnerHTML: { __html: markup } }), initialState, renderScripts));
-        }
-    }]);
-
-    return Html;
-}(React.Component);
-
+    render() {
+        const head = react_helmet_1.Helmet.rewind();
+        const { markup, store } = this.props;
+        const styles = this.resolve(['vendor.css', 'app.css']);
+        const renderStyles = styles.map((src, i) => React.createElement("link", { key: i, rel: "stylesheet", type: "text/css", href: src }));
+        const scripts = this.resolve(['vendor.js', 'app.js']);
+        const renderScripts = scripts.map((src, i) => React.createElement("script", { src: src, key: i }));
+        // tslint:disable-next-line:max-line-length
+        const initialState = React.createElement("script", { dangerouslySetInnerHTML: { __html: `window.__INITIAL_STATE__=${serialize(store.getState(), { isJSON: true })};` }, charSet: "UTF-8" });
+        return React.createElement("html", null, React.createElement("head", null, head.base.toComponent(), head.title.toComponent(), head.meta.toComponent(), head.link.toComponent(), head.script.toComponent(), renderStyles, React.createElement("link", { rel: "shortcut icon", href: "/favicon.ico" })), React.createElement("body", null, React.createElement("main", { id: "app", dangerouslySetInnerHTML: { __html: markup } }), initialState, renderScripts));
+    }
+}
 exports.Html = Html;
 
 /***/ }),
@@ -5005,40 +4948,17 @@ module.exports = require("serialize-javascript");
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var appConfig = __webpack_require__(11);
-var React = __webpack_require__(0);
-var react_helmet_1 = __webpack_require__(35);
-var components_1 = __webpack_require__(70);
-var style = __webpack_require__(107);
-
-var App = function (_React$Component) {
-    _inherits(App, _React$Component);
-
-    function App() {
-        _classCallCheck(this, App);
-
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+const appConfig = __webpack_require__(11);
+const React = __webpack_require__(0);
+const react_helmet_1 = __webpack_require__(35);
+const components_1 = __webpack_require__(70);
+const style = __webpack_require__(107);
+class App extends React.Component {
+    render() {
+        return React.createElement("section", { className: style.AppContainer }, React.createElement(react_helmet_1.Helmet, Object.assign({}, appConfig.app, appConfig.app.head)), React.createElement(components_1.Header, null), this.props.children);
     }
-
-    _createClass(App, [{
-        key: "render",
-        value: function render() {
-            return React.createElement("section", { className: style.AppContainer }, React.createElement(react_helmet_1.Helmet, Object.assign({}, appConfig.app, appConfig.app.head)), React.createElement(components_1.Header, null), this.props.children);
-        }
-    }]);
-
-    return App;
-}(React.Component);
-
+}
 exports.App = App;
 
 /***/ }),
@@ -5060,12 +4980,10 @@ exports.Header = Header_1.Header;
 
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(0);
-var react_router_1 = __webpack_require__(14);
-var style = __webpack_require__(72);
-exports.Header = function () {
-    return React.createElement("nav", { className: style.Nav }, React.createElement("ul", null, React.createElement("li", null, React.createElement(react_router_1.Link, { to: "/" }, "Home")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "about" }, "About")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "counter" }, "Counter")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "stars" }, "Stars"))));
-};
+const React = __webpack_require__(0);
+const react_router_1 = __webpack_require__(14);
+const style = __webpack_require__(72);
+exports.Header = () => React.createElement("nav", { className: style.Nav }, React.createElement("ul", null, React.createElement("li", null, React.createElement(react_router_1.Link, { to: "/" }, "Home")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "about" }, "About")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "counter" }, "Counter")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: "stars" }, "Stars"))));
 
 /***/ }),
 /* 72 */
@@ -5740,37 +5658,14 @@ exports.locals = {
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(0);
-var style = __webpack_require__(110);
-
-var Home = function (_React$Component) {
-    _inherits(Home, _React$Component);
-
-    function Home() {
-        _classCallCheck(this, Home);
-
-        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+const React = __webpack_require__(0);
+const style = __webpack_require__(110);
+class Home extends React.Component {
+    render() {
+        return React.createElement("div", { className: style.Home }, React.createElement("img", { src: __webpack_require__(112) }), React.createElement("p", null, "Hello!"));
     }
-
-    _createClass(Home, [{
-        key: "render",
-        value: function render() {
-            return React.createElement("div", { className: style.Home }, React.createElement("img", { src: __webpack_require__(112) }), React.createElement("p", null, "Hello!"));
-        }
-    }]);
-
-    return Home;
-}(React.Component);
-
+}
 exports.Home = Home;
 
 /***/ }),
@@ -5837,37 +5732,14 @@ module.exports = __webpack_require__.p + "images/6bb4ab550c97742ecb88e2d2e6d5952
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(0);
-var style = __webpack_require__(114);
-
-var About = function (_React$Component) {
-    _inherits(About, _React$Component);
-
-    function About() {
-        _classCallCheck(this, About);
-
-        return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+const React = __webpack_require__(0);
+const style = __webpack_require__(114);
+class About extends React.Component {
+    render() {
+        return React.createElement("div", { className: style.About }, React.createElement("h4", null, "About"));
     }
-
-    _createClass(About, [{
-        key: "render",
-        value: function render() {
-            return React.createElement("div", { className: style.About }, React.createElement("h4", null, "About"));
-        }
-    }]);
-
-    return About;
-}(React.Component);
-
+}
 exports.About = About;
 
 /***/ }),
@@ -5928,67 +5800,28 @@ exports.locals = {
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
     var c = arguments.length,
         r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
         d;
-    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(0);
-var _1 = __webpack_require__(32);
-
-var _require = __webpack_require__(13),
-    connect = _require.connect;
-
-var style = __webpack_require__(117);
-var Counter = function (_React$Component) {
-    _inherits(Counter, _React$Component);
-
-    function Counter() {
-        _classCallCheck(this, Counter);
-
-        return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
+const React = __webpack_require__(0);
+const counter_1 = __webpack_require__(32);
+const { connect } = __webpack_require__(13);
+const style = __webpack_require__(117);
+let Counter = class Counter extends React.Component {
+    render() {
+        const { increment, decrement, counter } = this.props;
+        return React.createElement("div", { className: style.Counter }, React.createElement("h4", null, "Counter Example"), React.createElement("button", { name: "incBtn", onClick: increment }, "INCREMENT"), React.createElement("button", { name: "decBtn", onClick: decrement, disabled: counter.count <= 0 }, "DECREMENT"), React.createElement("p", null, counter.count));
     }
-
-    _createClass(Counter, [{
-        key: "render",
-        value: function render() {
-            var _props = this.props,
-                increment = _props.increment,
-                decrement = _props.decrement,
-                counter = _props.counter;
-
-            return React.createElement("div", { className: style.Counter }, React.createElement("h4", null, "Counter Example"), React.createElement("button", { name: "incBtn", onClick: increment }, "INCREMENT"), React.createElement("button", { name: "decBtn", onClick: decrement, disabled: counter.count <= 0 }, "DECREMENT"), React.createElement("p", null, counter.count));
-        }
-    }]);
-
-    return Counter;
-}(React.Component);
-Counter = __decorate([connect(function (state) {
-    return { counter: state.counter };
-}, function (dispatch) {
-    return {
-        decrement: function decrement() {
-            return dispatch(_1.decrement());
-        },
-        increment: function increment() {
-            return dispatch(_1.increment());
-        }
-    };
-})], Counter);
+};
+Counter = __decorate([connect(state => ({ counter: state.counter }), dispatch => ({
+    decrement: () => dispatch(counter_1.decrement()),
+    increment: () => dispatch(counter_1.increment())
+}))], Counter);
 exports.Counter = Counter;
 
 /***/ }),
@@ -6049,64 +5882,30 @@ exports.locals = {
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
     var c = arguments.length,
         r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
         d;
-    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(0);
-var stars_1 = __webpack_require__(33);
-
-var _require = __webpack_require__(13),
-    connect = _require.connect;
-
-var _require2 = __webpack_require__(16),
-    asyncConnect = _require2.asyncConnect;
-
-var style = __webpack_require__(120);
-var Stars = function (_React$Component) {
-    _inherits(Stars, _React$Component);
-
-    function Stars() {
-        _classCallCheck(this, Stars);
-
-        return _possibleConstructorReturn(this, (Stars.__proto__ || Object.getPrototypeOf(Stars)).apply(this, arguments));
+const React = __webpack_require__(0);
+const stars_1 = __webpack_require__(33);
+const { connect } = __webpack_require__(13);
+const { asyncConnect } = __webpack_require__(16);
+const style = __webpack_require__(120);
+let Stars = class Stars extends React.Component {
+    render() {
+        const { stars } = this.props;
+        return React.createElement("div", { className: style.Stars }, stars.isFetching ? 'Fetching Stars' : stars.count);
     }
-
-    _createClass(Stars, [{
-        key: "render",
-        value: function render() {
-            var stars = this.props.stars;
-
-            return React.createElement("div", { className: style.Stars }, stars.isFetching ? 'Fetching Stars' : stars.count);
-        }
-    }]);
-
-    return Stars;
-}(React.Component);
+};
 Stars = __decorate([asyncConnect([{
-    promise: function promise(_ref) {
-        var dispatch = _ref.store.dispatch;
-
+    promise: ({ store: { dispatch } }) => {
         return dispatch(stars_1.getStars());
     }
-}]), connect(function (state) {
-    return { stars: state.stars };
-})], Stars);
+}]), connect(state => ({ stars: state.stars }))], Stars);
 exports.Stars = Stars;
 
 /***/ }),
@@ -6209,13 +6008,13 @@ var config = {
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    modules: [path.resolve(__dirname), 'node_modules', 'app', 'app/redux'],
+    modules: [path.resolve(__dirname), 'node_modules', 'common', 'common/redux'],
   },
 
   entry: {
     app: [
       'webpack-hot-middleware/client?reload=true',
-      './src/client.tsx',
+      './src/client/client.tsx',
       './src/vendor/main.ts'
     ]
   },
@@ -6247,7 +6046,7 @@ var config = {
       },
       {
         test: /\.css$/,
-        include: path.resolve('./src/app'),
+        include: path.resolve('../../src/common'),
         loaders: [
           'style-loader',
           'css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]',
@@ -6256,7 +6055,7 @@ var config = {
       },
       {
         test: /\.css$/,
-        exclude: path.resolve('./src/app'),
+        exclude: path.resolve('../../src/common'),
         loaders: [
           'style-loader',
           'css-loader'
@@ -6297,7 +6096,7 @@ var config = {
         postcss: function () {
           return [
             stylelint({
-              files: '../../src/app/*.css'
+              files: '../../src/common/*.css'
             }),
             postcssNext(),
             postcssAssets({
